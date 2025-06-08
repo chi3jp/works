@@ -10,6 +10,163 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/images.css">
+    <style>
+      /* グローバルなナビゲーションスタイル */
+      .nav-links {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .nav-links a {
+        position: relative;
+        text-decoration: none;
+        color: var(--text);
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        display: inline-block;
+      }
+      
+      /* PC表示時のみアニメーションを適用 */
+      @media (min-width: 769px) {
+        .nav-links a::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          background: var(--primary);
+          transition: all 0.3s ease;
+          transform: translateX(-50%);
+        }
+        
+        .nav-links a:hover::after {
+          width: calc(100% - 2rem);
+        }
+        
+        .nav-links a:hover {
+          color: var(--primary);
+        }
+      }
+      
+      /* モバイルメニューのスタイル */
+      @media (max-width: 768px) {
+        .nav-toggle {
+          display: block !important;
+          position: relative;
+          width: 30px;
+          height: 24px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          z-index: 1001;
+          padding: 0;
+        }
+        
+        .nav-toggle span {
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background: #333;
+          transition: all 0.3s ease;
+        }
+        
+        .nav-toggle span:nth-child(1) { top: 0; }
+        .nav-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+        .nav-toggle span:nth-child(3) { bottom: 0; }
+        
+        .nav-toggle.active span:nth-child(1) {
+          transform: translateY(11px) rotate(45deg);
+        }
+        
+        .nav-toggle.active span:nth-child(2) {
+          opacity: 0;
+        }
+        
+        .nav-toggle.active span:nth-child(3) {
+          transform: translateY(-11px) rotate(-45deg);
+        }
+        
+        .nav-links {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 80%;
+          max-width: 300px;
+          height: 100vh;
+          background: #fff;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          transition: right 0.3s ease;
+          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+          padding: 2rem;
+          z-index: 1000;
+          margin: 0;
+        }
+        
+        .nav-links.active {
+          right: 0;
+        }
+        
+        .nav-links li {
+          margin: 1.5rem 0;
+          width: 100%;
+          text-align: center;
+        }
+        
+        .nav-links a {
+          display: block;
+          padding: 0.5rem 0;
+        }
+        
+        .nav-links a::after {
+          display: none;
+        }
+        
+        .nav-toggle span {
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background: #333;
+          transition: all 0.3s ease;
+        }
+        
+        .nav-toggle span:nth-child(1) { top: 0; }
+        .nav-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+        .nav-toggle span:nth-child(3) { bottom: 0; }
+        
+        .nav-links {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 80%;
+          max-width: 300px;
+          height: 100vh;
+          background: #fff;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          transition: all 0.3s ease;
+          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+          padding: 2rem;
+          z-index: 1000;
+          list-style: none;
+        }
+        
+        .nav-links.active {
+          right: 0;
+        }
+        
+        .nav-links li {
+          margin: 1.5rem 0;
+        }
+      }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -283,13 +440,104 @@
         </div>
     </footer>
 
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- メインのJavaScript -->
-    <script src="js/main.js"></script>
+    <!-- インラインJavaScript -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM fully loaded');
+      
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      const navItems = document.querySelectorAll('.nav-links a');
+      
+      console.log('navToggle:', navToggle);
+      console.log('navLinks:', navLinks);
+      console.log('navItems:', navItems);
+      
+      // メニュートグル機能
+      function toggleMenu() {
+        navToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+      }
+      
+      // メニューを閉じる
+      function closeMenu() {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
+      // メニュートグルにイベントリスナーを追加
+      if (navToggle) {
+        navToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          console.log('Menu toggle clicked');
+          toggleMenu();
+        });
+      }
+      
+      // メニュー項目にクリックイベントを追加
+      if (navItems.length > 0) {
+        navItems.forEach(item => {
+          item.addEventListener('click', (e) => {
+            console.log('Menu item clicked');
+            closeMenu();
+            
+            // スムーズスクロール
+            const targetId = item.getAttribute('href');
+            if (targetId.startsWith('#')) {
+              e.preventDefault();
+              const targetElement = document.querySelector(targetId);
+              if (targetElement) {
+                window.scrollTo({
+                  top: targetElement.offsetTop - 80,
+                  behavior: 'smooth'
+                });
+                history.pushState(null, '', targetId);
+              }
+            }
+          });
+        });
+      }
+      
+      // メディアクエリの変更を監視
+      function handleTabletChange(e) {
+        if (e.matches) {
+          // モバイル表示
+          closeMenu();
+        } else {
+          // デスクトップ表示
+          closeMenu();
+        }
+      }
+      
+      // 初期チェック
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+      handleTabletChange(mediaQuery);
+      mediaQuery.addListener(handleTabletChange);
+    });
+    </script>
+      
+      // スムーズスクロール
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        if (anchor.getAttribute('href') !== '#') {
+          anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+              });
+              
+              history.pushState(null, '', targetId);
+            }
+          });
+        }
+      });
+    });
+    </script>
 </body>
 </html>
