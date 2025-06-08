@@ -80,6 +80,7 @@
         
         .nav-toggle.active span:nth-child(1) {
           transform: translateY(11px) rotate(45deg);
+          background: #333;
         }
         
         .nav-toggle.active span:nth-child(2) {
@@ -88,6 +89,7 @@
         
         .nav-toggle.active span:nth-child(3) {
           transform: translateY(-11px) rotate(-45deg);
+          background: #333;
         }
         
         .nav-links {
@@ -95,17 +97,19 @@
           top: 0;
           right: -100%;
           width: 80%;
-          max-width: 300px;
+          max-width: 280px;
           height: 100vh;
+          overflow-y: auto;
           background: #fff;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          transition: right 0.3s ease;
-          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-          padding: 2rem;
+          padding: 80px 20px 20px;
+          box-sizing: border-box;
+          transition: all 0.3s ease;
           z-index: 1000;
+          list-style: none;
           margin: 0;
+          display: flex;
+          flex-direction: column;
+          -webkit-overflow-scrolling: touch;
         }
         
         .nav-links.active {
@@ -113,7 +117,7 @@
         }
         
         .nav-links li {
-          margin: 1.5rem 0;
+          margin: 0.5rem 0;
           width: 100%;
           text-align: center;
         }
@@ -121,57 +125,20 @@
         .nav-links a {
           display: block;
           padding: 0.5rem 0;
+          font-size: 1rem;
+          color: #333;
+          line-height: 1.3;
         }
         
         .nav-links a::after {
           display: none;
-        }
-        
-        .nav-toggle span {
-          display: block;
-          position: absolute;
-          width: 100%;
-          height: 2px;
-          background: #333;
-          transition: all 0.3s ease;
-        }
-        
-        .nav-toggle span:nth-child(1) { top: 0; }
-        .nav-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
-        .nav-toggle span:nth-child(3) { bottom: 0; }
-        
-        .nav-links {
-          position: fixed;
-          top: 0;
-          right: -100%;
-          width: 80%;
-          max-width: 300px;
-          height: 100vh;
-          background: #fff;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          transition: all 0.3s ease;
-          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-          padding: 2rem;
-          z-index: 1000;
-          list-style: none;
-        }
-        
-        .nav-links.active {
-          right: 0;
-        }
-        
-        .nav-links li {
-          margin: 1.5rem 0;
         }
       }
     </style>
 </head>
 <body>
     <header class="header">
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1639762681057-1e73af5734ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="AIアートのイメージ" class="hero-bg">
+        <div class="hero-pattern">
             <div class="hero-overlay"></div>
         </div>
         <nav class="nav">
@@ -196,7 +163,10 @@
         <section id="about" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <img src="https://images.unsplash.com/photo-1639762681057-1e73af5734ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="AIアートの例" class="hero-image">
+                    <!-- 画像が無い場合は以下のdivでシンプルなグラデ円を表示 -->
+                    <div class="hero-visual"></div>
+                    <!-- 画像がある場合は以下を使用 -->
+                    <!-- <img src="path/to/your/image.jpg" alt="AIアートの例" class="hero-image"> -->
                     <h1 class="hero-title">Chi3jp</h1>
                     <p class="hero-subtitle">AIを活用したクリエイティブな作品を制作・発信しています</p>
                     <div class="hero-tags">
@@ -517,27 +487,6 @@
       mediaQuery.addListener(handleTabletChange);
     });
     </script>
-      
-      // スムーズスクロール
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        if (anchor.getAttribute('href') !== '#') {
-          anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-              window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-              });
-              
-              history.pushState(null, '', targetId);
-            }
-          });
-        }
-      });
-    });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
