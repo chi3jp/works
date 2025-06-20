@@ -15,6 +15,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+      /* カードスタイル */
+      .card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        background: white;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+      
+      /* カード内のリンクをブロック要素に */
+      .card a {
+        display: block;
+        padding: 20px;
+        text-decoration: none;
+        color: inherit;
+      }
+
       /* グローバルなナビゲーションスタイル */
       .nav-links {
         display: flex;
@@ -233,91 +258,58 @@
             </div>
         </section>
 
-        <!-- デジタルコンテンツセクション -->
-        <section id="contents" class="section">
+        <!-- SNSセクション -->
+        <section id="social" class="section">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-icon">📚</span>
-                    <h2 class="section-title">デジタルコンテンツ</h2>
-                    <p class="section-description">AIを活用して作成したデジタルコンテンツ</p>
+                    <span class="section-icon">🌐</span>
+                    <h2 class="section-title">SNS・その他</h2>
+                    <p class="section-description">各種SNSやその他の活動はこちらから</p>
                 </div>
                 <div class="card-grid">
-                    <a href="https://kakowara.booth.pm/items/6079581" target="_blank" class="card">
-                        <div class="card-icon">🌈</div>
-                        <h3 class="card-title">虹色絵巻</h3>
-                        <p class="card-description">多数のAIアーティストの作品をまとめた豪華作品集に参加。美しいAIアートの数々を1冊の本にまとめました。</p>
+                    <a href="https://twitter.com/chi3_jp" target="_blank" class="card">
+                        <div class="card-icon">🐦</div>
+                        <h3 class="card-title">X (Twitter)</h3>
+                        <p class="card-description">最新情報や日常のつぶやきを投稿しています。フォローお待ちしています！</p>
                         <div class="card-tags">
-                            <span class="tag">アートブック</span>
-                            <span class="tag">コレクション</span>
-                            <span class="tag">BOOTH</span>
+                            <span class="tag">最新情報</span>
+                            <span class="tag">日常のつぶやき</span>
                         </div>
                     </a>
-                    <a href="https://store.line.me/stickershop/author/227674/ja" target="_blank" class="card">
-                        <div class="card-icon">💬</div>
-                        <h3 class="card-title">LINEスタンプ</h3>
-                        <p class="card-description">AIを活用して作成したオリジナルLINEスタンプを販売中。日常の会話がもっと楽しくなるスタンプが揃っています。</p>
+                    <a href="https://www.instagram.com/chi3jp_aiart/" target="_blank" class="card">
+                        <div class="card-icon">📸</div>
+                        <h3 class="card-title">Instagram</h3>
+                        <p class="card-description">AIアート作品や制作風景を中心に投稿しています。フォローお願いします！</p>
                         <div class="card-tags">
-                            <span class="tag">40種セット</span>
-                            <span class="tag">ビジネスでも使える</span>
-                        </div>
-                    </a>
-                    <a href="https://promptbase.com/profile/chi3" target="_blank" class="card">
-                        <div class="card-icon">✨</div>
-                        <h3 class="card-title">PromptBase</h3>
-                        <p class="card-description">AIアート生成のためのプロンプトを販売しています。高品質な画像生成のコツを学べます。</p>
-                        <div class="card-tags">
-                            <span class="tag">プロンプト</span>
                             <span class="tag">AIアート</span>
-                            <span class="tag">チュートリアル</span>
+                            <span class="tag">制作風景</span>
                         </div>
                     </a>
-                    <a href="https://suno.com/@chi3jp" target="_blank" class="card">
+                    <a href="https://www.pinterest.jp/chi3_jp/" target="_blank" class="card">
+                        <div class="card-icon">📌</div>
+                        <h3 class="card-title">Pinterest</h3>
+                        <p class="card-description">インスピレーションの元になる画像や、お気に入りの作品をピン留めしています。</p>
+                        <div class="card-tags">
+                            <span class="tag">インスピレーション</span>
+                            <span class="tag">コレクション</span>
+                        </div>
+                    </a>
+                    <a href="https://www.tiktok.com/@chi3jp" target="_blank" class="card">
                         <div class="card-icon">🎵</div>
-                        <h3 class="card-title">SUNO</h3>
-                        <p class="card-description">AIを活用して作成した音楽作品を公開しています。様々なジャンルの楽曲をお楽しみください。</p>
+                        <h3 class="card-title">TikTok</h3>
+                        <p class="card-description">短い動画でAIアート制作の様子や、作品の魅力をお届けしています。</p>
                         <div class="card-tags">
-                            <span class="tag">AIミュージック</span>
-                            <span class="tag">オリジナル楽曲</span>
+                            <span class="tag">ショート動画</span>
+                            <span class="tag">制作過程</span>
                         </div>
                     </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- NFTセクション -->
-        <section id="nft" class="section bg-light">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-icon">🖼️</span>
-                    <h2 class="section-title">NFT作品</h2>
-                    <p class="section-description">ブロックチェーン技術を活用したデジタルアート作品</p>
-                </div>
-                <div class="card-grid">
-                    <a href="https://opensea.io/Chi3JP" target="_blank" class="card">
-                        <div class="card-icon">🌊</div>
-                        <h3 class="card-title">OpenSea</h3>
-                        <p class="card-description">世界最大級のNFTマーケットプレイスで作品を展示・販売しています。イーサリアムブロックチェーンを採用。</p>
+                    <a href="https://buymeacoffee.com/chi3jp" target="_blank" class="card">
+                        <div class="card-icon">☕</div>
+                        <h3 class="card-title">Buy Me a Coffee</h3>
+                        <p class="card-description">もし作品が気に入っていただけましたら、コーヒー一杯分のご支援をいただけると嬉しいです。</p>
                         <div class="card-tags">
-                            <span class="tag">1/1アート</span>
-                            <span class="tag">コレクティブル</span>
-                        </div>
-                    </a>
-                    <a href="https://rarible.com/chi3jp/owned" target="_blank" class="card">
-                        <div class="card-icon">✨</div>
-                        <h3 class="card-title">Rarible</h3>
-                        <p class="card-description">マルチチェーン対応のNFTマーケットプレイス。様々なブロックチェーンで作品を展開しています。</p>
-                        <div class="card-tags">
-                            <span class="tag">マルチチェーン</span>
-                            <span class="tag">限定作品</span>
-                        </div>
-                    </a>
-                    <a href="https://nft.hexanft.com/users/VfS6uMp40v7EG1" target="_blank" class="card">
-                        <div class="card-icon">💴</div>
-                        <h3 class="card-title">HEXA</h3>
-                        <p class="card-description">日本発のNFTマーケットプレイス。円決済が可能で、初心者にもやさしいUIが特徴です。</p>
-                        <div class="card-tags">
-                            <span class="tag">円決済可</span>
-                            <span class="tag">国内プラットフォーム</span>
+                            <span class="tag">寄付</span>
+                            <span class="tag">サポート</span>
                         </div>
                     </a>
                 </div>
@@ -405,58 +397,91 @@
             </div>
         </section>
 
-        <!-- SNSセクション -->
-        <section id="social" class="section">
+        <!-- デジタルコンテンツセクション -->
+        <section id="contents" class="section">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-icon">🌐</span>
-                    <h2 class="section-title">SNS・その他</h2>
-                    <p class="section-description">各種SNSやその他の活動はこちらから</p>
+                    <span class="section-icon">📚</span>
+                    <h2 class="section-title">デジタルコンテンツ</h2>
+                    <p class="section-description">AIを活用して作成したデジタルコンテンツ</p>
                 </div>
                 <div class="card-grid">
-                    <a href="https://twitter.com/chi3_jp" target="_blank" class="card">
-                        <div class="card-icon">🐦</div>
-                        <h3 class="card-title">X (Twitter)</h3>
-                        <p class="card-description">最新情報や日常のつぶやきを投稿しています。フォローお待ちしています！</p>
+                    <a href="https://kakowara.booth.pm/items/6079581" target="_blank" class="card">
+                        <div class="card-icon">🌈</div>
+                        <h3 class="card-title">虹色絵巻</h3>
+                        <p class="card-description">多数のAIアーティストの作品をまとめた豪華作品集に参加。美しいAIアートの数々を1冊の本にまとめました。</p>
                         <div class="card-tags">
-                            <span class="tag">最新情報</span>
-                            <span class="tag">日常のつぶやき</span>
-                        </div>
-                    </a>
-                    <a href="https://www.instagram.com/chi3jp_aiart/" target="_blank" class="card">
-                        <div class="card-icon">📸</div>
-                        <h3 class="card-title">Instagram</h3>
-                        <p class="card-description">AIアート作品や制作風景を中心に投稿しています。フォローお願いします！</p>
-                        <div class="card-tags">
-                            <span class="tag">AIアート</span>
-                            <span class="tag">制作風景</span>
-                        </div>
-                    </a>
-                    <a href="https://www.pinterest.jp/chi3_jp/" target="_blank" class="card">
-                        <div class="card-icon">📌</div>
-                        <h3 class="card-title">Pinterest</h3>
-                        <p class="card-description">インスピレーションの元になる画像や、お気に入りの作品をピン留めしています。</p>
-                        <div class="card-tags">
-                            <span class="tag">インスピレーション</span>
+                            <span class="tag">アートブック</span>
                             <span class="tag">コレクション</span>
+                            <span class="tag">BOOTH</span>
                         </div>
                     </a>
-                    <a href="https://www.tiktok.com/@chi3jp" target="_blank" class="card">
+                    <a href="https://store.line.me/stickershop/author/227674/ja" target="_blank" class="card">
+                        <div class="card-icon">💬</div>
+                        <h3 class="card-title">LINEスタンプ</h3>
+                        <p class="card-description">AIを活用して作成したオリジナルLINEスタンプを販売中。日常の会話がもっと楽しくなるスタンプが揃っています。</p>
+                        <div class="card-tags">
+                            <span class="tag">40種セット</span>
+                            <span class="tag">ビジネスでも使える</span>
+                        </div>
+                    </a>
+                    <a href="https://promptbase.com/profile/chi3" target="_blank" class="card">
+                        <div class="card-icon">✨</div>
+                        <h3 class="card-title">PromptBase</h3>
+                        <p class="card-description">AIアート生成のためのプロンプトを販売しています。高品質な画像生成のコツを学べます。</p>
+                        <div class="card-tags">
+                            <span class="tag">プロンプト</span>
+                            <span class="tag">AIアート</span>
+                            <span class="tag">チュートリアル</span>
+                        </div>
+                    </a>
+                    <a href="https://suno.com/@chi3jp" target="_blank" class="card">
                         <div class="card-icon">🎵</div>
-                        <h3 class="card-title">TikTok</h3>
-                        <p class="card-description">短い動画でAIアート制作の様子や、作品の魅力をお届けしています。</p>
+                        <h3 class="card-title">SUNO</h3>
+                        <p class="card-description">AIを活用して作成した音楽作品を公開しています。様々なジャンルの楽曲をお楽しみください。</p>
                         <div class="card-tags">
-                            <span class="tag">ショート動画</span>
-                            <span class="tag">制作過程</span>
+                            <span class="tag">AIミュージック</span>
+                            <span class="tag">オリジナル楽曲</span>
                         </div>
                     </a>
-                    <a href="https://buymeacoffee.com/chi3jp" target="_blank" class="card">
-                        <div class="card-icon">☕</div>
-                        <h3 class="card-title">Buy Me a Coffee</h3>
-                        <p class="card-description">もし作品が気に入っていただけましたら、コーヒー一杯分のご支援をいただけると嬉しいです。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- NFTセクション -->
+        <section id="nft" class="section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-icon">🖼️</span>
+                    <h2 class="section-title">NFT作品</h2>
+                    <p class="section-description">ブロックチェーン技術を活用したデジタルアート作品</p>
+                </div>
+                <div class="card-grid">
+                    <a href="https://opensea.io/Chi3JP" target="_blank" class="card">
+                        <div class="card-icon">🌊</div>
+                        <h3 class="card-title">OpenSea</h3>
+                        <p class="card-description">世界最大級のNFTマーケットプレイスで作品を展示・販売しています。イーサリアムブロックチェーンを採用。</p>
                         <div class="card-tags">
-                            <span class="tag">寄付</span>
-                            <span class="tag">サポート</span>
+                            <span class="tag">1/1アート</span>
+                            <span class="tag">コレクティブル</span>
+                        </div>
+                    </a>
+                    <a href="https://rarible.com/chi3jp/owned" target="_blank" class="card">
+                        <div class="card-icon">✨</div>
+                        <h3 class="card-title">Rarible</h3>
+                        <p class="card-description">マルチチェーン対応のNFTマーケットプレイス。様々なブロックチェーンで作品を展開しています。</p>
+                        <div class="card-tags">
+                            <span class="tag">マルチチェーン</span>
+                            <span class="tag">限定作品</span>
+                        </div>
+                    </a>
+                    <a href="https://nft.hexanft.com/users/VfS6uMp40v7EG1" target="_blank" class="card">
+                        <div class="card-icon">💴</div>
+                        <h3 class="card-title">HEXA</h3>
+                        <p class="card-description">日本発のNFTマーケットプレイス。円決済が可能で、初心者にもやさしいUIが特徴です。</p>
+                        <div class="card-tags">
+                            <span class="tag">円決済可</span>
+                            <span class="tag">国内プラットフォーム</span>
                         </div>
                     </a>
                 </div>
@@ -472,6 +497,7 @@
 
     <!-- インラインJavaScript -->
     <script>
+    // DOMが完全に読み込まれたら実行
     document.addEventListener('DOMContentLoaded', function() {
       console.log('DOM fully loaded');
       
