@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/images.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
       /* グローバルなナビゲーションスタイル */
       .nav-links {
@@ -137,6 +141,7 @@
     </style>
 </head>
 <body>
+    <div class="nav-overlay"></div>
     <header class="header">
         <div class="hero-pattern">
             <div class="hero-overlay"></div>
@@ -144,12 +149,13 @@
         <nav class="nav">
             <div class="nav-logo">Chi3jp</div>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#goods">グッズ販売</a></li>
-                <li><a href="#contents">デジタルコンテンツ</a></li>
-                <li><a href="#nft">NFT</a></li>
-                <li><a href="#social">SNS</a></li>
-                <li><a href="https://chi3.substack.com/" target="_blank">メルマガ</a></li>
+                <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li><a href="#goods" onclick="closeMenu()">グッズ販売</a></li>
+                <li><a href="#social" onclick="closeMenu()">SNS</a></li>
+                <li><a href="#newsletter" onclick="closeMenu()">メルマガ</a></li>
+                <li><a href="#audio" onclick="closeMenu()">音声配信</a></li>
+                <li><a href="#contents" onclick="closeMenu()">デジタルコンテンツ</a></li>
+                <li><a href="#nft" onclick="closeMenu()">NFT</a></li>
             </ul>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
@@ -163,16 +169,22 @@
         <section id="about" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <!-- 画像が無い場合は以下のdivでシンプルなグラデ円を表示 -->
-                    <div class="hero-visual"></div>
-                    <!-- 画像がある場合は以下を使用 -->
-                    <!-- <img src="path/to/your/image.jpg" alt="AIアートの例" class="hero-image"> -->
-                    <h1 class="hero-title">Chi3jp</h1>
-                    <p class="hero-subtitle">AIを活用したクリエイティブな作品を制作・発信しています</p>
-                    <div class="hero-tags">
-                        <span class="tag">#AIアート</span>
-                        <span class="tag">#音楽制作</span>
-                        <span class="tag">#デジタルクリエイティブ</span>
+                    <div class="profile-image-container">
+                        <img src="images/chi3jp_A_stylish_and_fashionable_very_well-dressed_elegant_an_455014f1-5f38-4337-9b72-e45890e151b0_1.png" alt="Chi3jpのプロフィール画像" class="profile-image">
+                    </div>
+                    <div class="hero-text">
+                        <h1 class="hero-title">Chi3jp</h1>
+                        <p class="hero-subtitle">AIを活用したクリエイティブな作品を制作・発信しています</p>
+
+                        <div class="section-nav">
+                            <a href="#goods">#グッズ</a>
+                            <a href="#social">#SNS</a>
+                            <a href="#newsletter">#メルマガ</a>
+                            <a href="#audio">#音声配信</a>
+                            <a href="#contents">#コンテンツ</a>
+                            <a href="#nft">#NFT</a>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -324,22 +336,70 @@
                     <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="メールマガジンのイメージ" class="newsletter-image">
                     <div class="newsletter-content">
                         <div class="card-icon">✨</div>
-                    <h3 class="card-title">AIで日常をラクにするヒント</h3>
-                    <p class="card-description">
-                        AIを少しずつ取り入れて日常をラクに。生まれた余裕がやさしさを広げ、
-                        そのやさしさが世の中をちょっと良くしていく。
-                        そんな未来を願って、発信しています。
-                    </p>
-                    <div class="card-highlight">
-                        <h4>無料登録特典</h4>
-                        <ul>
-                            <li>AIがそっと引き出してくれるChatGPTプロンプト集</li>
-                            <li>未公開のMidjourneyのsrefコード</li>
-                            <li>マンガ風画像生成用Midjourneyプロンプト</li>
-                            <li>SUZURI 2025年春：売れるデザイン＆企画ガイド</li>
-                        </ul>
+                        <h3 class="card-title">AIで日常をちょっとラクに</h3>
+                        <p class="card-description">
+                            作業がはかどり、心にもゆとりが生まれるヒントをお届けしています。
+                        </p>
+                        <div class="card-highlight">
+                            <p class="bonus-teaser">▶ 登録特典あり：モヤモヤ・迷い・アイデア不足に効くAIプロンプト集 ほか</p>
+                        </div>
+                        
+                        <button class="btn btn-text toggle-details" id="toggleNewsletterDetails" aria-expanded="false" aria-controls="newsletterDetails">
+                            <span class="show-text">詳細を見る</span>
+                            <span class="hide-text" style="display:none;">閉じる</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        
+                        <div class="newsletter-details" id="newsletterDetails" style="display:none;">
+                            <p>こんなことを願って発信しています。</p>
+                            <p>AIをちょっとずつ使って、作業がラクになれば、時短できますし心に余裕が生まれます。<br>
+                            心に余裕があると人に優しくできます。やさしい人が増えれば、世の中がもっとよくなるはず。</p>
+                            
+                            <p>世界に比べて、AIを使っている人がまだまだ少ない日本。<br>
+                            でも、ちょっと使うだけで作業はラクに、心にもゆとりが生まれます。</p>
+                            
+                            <p>まずは自分自身がラクになることから、はじめてみませんか？</p>
+                            
+                            <p>そんなことを願い、AIで日常をラクにするヒントをお届けしています。</p>
+                            
+                            <div class="card-highlight">
+                                <h4>無料登録特典</h4>
+                                <ul>
+                                    <li>やりたいことが見えてくるAIとの対話プロンプト集</li>
+                                    <li>未公開のMidjourneyのsrefコード</li>
+                                    <li>マンガ風画像生成用Midjourneyプロンプト</li>
+                                    <li>SUZURI 2025年春：売れるデザイン＆企画ガイド</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <a href="https://chi3.substack.com/about" target="_blank" class="btn btn-primary" style="margin-top: 1.5rem;">無料で登録する</a>
                     </div>
-                        <a href="https://chi3.substack.com/" target="_blank" class="btn btn-primary">無料で登録する</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 音声配信セクション -->
+        <section id="audio" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-icon">🎧</span>
+                    <h2 class="section-title">音声配信</h2>
+                    <p class="section-description">メールマガジンの内容を音声でもお届けしています</p>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <p class="card-description">
+                            メールマガジンの内容を音声でお届けしています。通勤中や家事をしながら、耳で気軽にAIの活用方法を学べます。
+                        </p>
+                        <div class="audio-buttons" style="justify-content: center; margin-top: 2rem;">
+                            <a href="https://stand.fm/channels/5ec4f43bf654bbcab4231d7f" target="_blank" class="audio-button standfm">
+                                <i class="fas fa-podcast"></i> stand.fmで聴く
+                            </a>
+                            <a href="https://podcasts.apple.com/us/podcast/ちょっとai/id1821673136" target="_blank" class="audio-button apple-podcast">
+                                <i class="fas fa-podcast"></i> Apple Podcastで聴く
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -425,18 +485,110 @@
       
       // メニュートグル機能
       function toggleMenu() {
-        navToggle.classList.toggle('active');
+        const navLinks = document.querySelector('.nav-links');
+        const navToggle = document.querySelector('.nav-toggle');
+        const overlay = document.querySelector('.nav-overlay');
+        
         navLinks.classList.toggle('active');
-        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        navToggle.classList.toggle('active');
+        overlay.classList.toggle('active');
+        
+        // スクロールの制御
+        if (navLinks.classList.contains('active')) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = '';
+        }
       }
-      
+
       // メニューを閉じる
       function closeMenu() {
-        navToggle.classList.remove('active');
+        const navLinks = document.querySelector('.nav-links');
+        const navToggle = document.querySelector('.nav-toggle');
+        const overlay = document.querySelector('.nav-overlay');
+        
         navLinks.classList.remove('active');
+        navToggle.classList.remove('active');
+        overlay.classList.remove('active');
         document.body.style.overflow = '';
       }
       
+      // オーバーレイをクリックしてメニューを閉じる
+      document.querySelector('.nav-overlay').addEventListener('click', closeMenu);
+      
+      // メニュー内のリンクをクリックしたときの処理
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', (e) => {
+          // 外部リンクでない場合のみ処理
+          if (!link.getAttribute('target') || link.getAttribute('target') !== '_blank') {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            closeMenu();
+            // スムーズスクロール
+            setTimeout(() => {
+              document.querySelector(targetId).scrollIntoView({
+                behavior: 'smooth'
+              });
+            }, 300);
+          }
+        });
+      });
+      
+      // メルマガ詳細の表示/非表示を切り替える
+      const toggleDetailsBtn = document.getElementById('toggleNewsletterDetails');
+      const detailsContent = document.querySelector('.newsletter-details');
+      const showText = document.querySelector('.show-text');
+      const hideText = document.querySelector('.hide-text');
+      const chevron = toggleDetailsBtn?.querySelector('i');
+      
+      if (toggleDetailsBtn && detailsContent) {
+        toggleDetailsBtn.addEventListener('click', function() {
+          const isExpanded = detailsContent.classList.toggle('show');
+          
+          // テキストの切り替え
+          if (showText && hideText) {
+            showText.style.display = isExpanded ? 'none' : 'inline';
+            hideText.style.display = isExpanded ? 'inline' : 'none';
+          }
+          
+          // アイコンの回転アニメーション
+          if (chevron) {
+            chevron.style.transform = isExpanded ? 'rotate(180deg)' : 'rotate(0)';
+          }
+          
+          // アコーディオンアニメーション
+          if (isExpanded) {
+            detailsContent.style.display = 'block';
+            const height = detailsContent.scrollHeight + 'px';
+            detailsContent.style.maxHeight = '0';
+            detailsContent.style.opacity = '0';
+            detailsContent.style.transition = 'max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease';
+            
+            // アニメーション開始
+            requestAnimationFrame(() => {
+              detailsContent.style.maxHeight = height;
+              detailsContent.style.opacity = '1';
+              detailsContent.style.margin = '15px 0';
+              detailsContent.style.padding = '15px 0 0';
+              detailsContent.style.borderTop = '1px solid #eee';
+            });
+          } else {
+            detailsContent.style.maxHeight = '0';
+            detailsContent.style.opacity = '0';
+            detailsContent.style.margin = '0';
+            detailsContent.style.padding = '0';
+            detailsContent.style.borderTop = 'none';
+            
+            // アニメーション終了後に非表示にする
+            setTimeout(() => {
+              if (!detailsContent.classList.contains('show')) {
+                detailsContent.style.display = 'none';
+              }
+            }, 300);
+          }
+        });
+      }
+
       // メニュートグルにイベントリスナーを追加
       if (navToggle) {
         navToggle.addEventListener('click', function(e) {
@@ -486,6 +638,47 @@
       handleTabletChange(mediaQuery);
       mediaQuery.addListener(handleTabletChange);
     });
+    </script>
+    <script>
+      // メルマガ詳細の折りたたみ機能
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleButton = document.getElementById('toggleNewsletterDetails');
+        const detailsContent = document.getElementById('newsletterDetails');
+        
+        if (toggleButton && detailsContent) {
+          // 初期状態を設定
+          const isExpanded = localStorage.getItem('newsletterDetailsExpanded') === 'true';
+          
+          // 初期状態を反映
+          if (isExpanded) {
+            detailsContent.setAttribute('aria-hidden', 'false');
+            toggleButton.setAttribute('aria-expanded', 'true');
+          } else {
+            detailsContent.setAttribute('aria-hidden', 'true');
+            toggleButton.setAttribute('aria-expanded', 'false');
+          }
+          
+          // トグルボタンのクリックイベント
+          toggleButton.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            
+            // 状態を切り替え
+            this.setAttribute('aria-expanded', !isExpanded);
+            detailsContent.setAttribute('aria-hidden', isExpanded);
+            
+            // 状態をローカルストレージに保存
+            localStorage.setItem('newsletterDetailsExpanded', !isExpanded);
+            
+            // スクリーンリーダー向けに状態を通知
+            const statusText = isExpanded ? '閉じる' : '開く';
+            this.setAttribute('aria-label', `詳細を${statusText}`);
+          });
+          
+          // アコーディオンが開閉する際のトランジションをスムーズにする
+          detailsContent.style.display = 'block';
+          detailsContent.style.overflow = 'hidden';
+        }
+      });
     </script>
     <script src="js/main.js"></script>
 </body>
