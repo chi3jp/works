@@ -40,12 +40,14 @@ function App() {
           </Routes>
         </main>
         <footer className="bg-dark text-white text-center p-3 mt-4">
-          <a href="https://twitter.com/chi3_jp" target="_blank" rel="noopener noreferrer" className="text-white mx-2">X</a>
-          <a href="https://www.instagram.com/chi3jp_aiart/" target="_blank" rel="noopener noreferrer" className="text-white mx-2">Instagram</a>
-          <a href="https://www.pinterest.jp/chi3_jp/" target="_blank" rel="noopener noreferrer" className="text-white mx-2">Pinterest</a>
-          <a href="https://www.tiktok.com/@chi3jp" target="_blank" rel="noopener noreferrer" className="text-white mx-2">TikTok</a>
-          <a href="https://suno.com/@chi3jp" target="_blank" rel="noopener noreferrer" className="text-white mx-2">Suno</a>
-          <a href="https://buymeacoffee.com/chi3jp" target="_blank" rel="noopener noreferrer" className="text-white mx-2 no-wrap">Buy me a coffee</a>
+          <div className="d-flex flex-wrap justify-content-center mb-2">
+            <a href="https://twitter.com/chi3_jp" target="_blank" rel="noopener noreferrer" className="text-white mx-2">X</a>
+            <a href="https://www.instagram.com/chi3jp_aiart/" target="_blank" rel="noopener noreferrer" className="text-white mx-2">Instagram</a>
+            <a href="https://www.pinterest.jp/chi3_jp/" target="_blank" rel="noopener noreferrer" className="text-white mx-2">Pinterest</a>
+            <a href="https://www.tiktok.com/@chi3jp" target="_blank" rel="noopener noreferrer" className="text-white mx-2">TikTok</a>
+            <a href="https://suno.com/@chi3jp" target="_blank" rel="noopener noreferrer" className="text-white mx-2">Suno</a>
+            <a href="https://buymeacoffee.com/chi3jp" target="_blank" rel="noopener noreferrer" className="text-white mx-2 no-wrap">Buy me a coffee</a>
+          </div>
           <p className="mt-2">&copy; 2025 Chi3. All rights reserved.</p>
         </footer>
       </div>
