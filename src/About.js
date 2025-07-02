@@ -8,23 +8,24 @@ function About() {
       <Row className="justify-content-center mb-4">
         <Col md={8} className="text-center">
           <Image src="/chi3jp_A_realistic_beautiful_particle_photorealism_of_a_healt_3bb05ce5-9b4d-4b0b-80c4-b1f885766ee2_3.png" alt="Profile" roundedCircle fluid className="profile-image mb-3" />
-          <h2>About chi3jp AI Art</h2>
+          <h2>About</h2>
           <p className="lead">
-            {/* ここにInstagramのプロフィール内容を貼り付けてください */}
-            AIアートで女性の美しさを表現しています。
-            様々なスタイルに挑戦し、見る人に新しい感動を届けたいと思っています。
-            どうぞごゆっくり作品をご覧ください。
+            AIを軸に、アートから日常のヒントまで、多彩なコンテンツを創造・発信しています。
           </p>
         </Col>
       </Row>
 
       <Row className="mb-4">
         <Col>
-          <h3>My Vision</h3>
+          <h3>Creative Works & Information Delivery</h3>
           <p>
-            私の作品は、AIの無限の可能性と人間の創造性を融合させることで生まれます。
-            特に女性の美しさと多様な感情をテーマに、見る人の心に響くようなアートを追求しています。
-            一枚一枚の絵に、新しい発見と感動を込めています。
+            アーティストとして、AIアートや音楽といったクリエイティブな作品を制作しています。AIの無限の可能性と人間の感性を掛け合わせ、新しい表現を探求することが私の情熱です。
+          </p>
+          <p>
+            同時に、メッセンジャーとして、メルマガやNote、音声配信を通じて「AIを日常に活かすアイデア」をお届けしています。「AIで、もっと毎日を楽しく、豊かに」をテーマに、誰もが気軽にテクノロジーの恩恵を受けられるようなヒントを発信しています。
+          </p>
+          <p>
+            このサイトでは、私の多岐にわたる活動をまとめています。どうぞごゆっくりお楽しみください。
           </p>
         </Col>
       </Row>
