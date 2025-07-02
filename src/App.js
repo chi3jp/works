@@ -45,7 +45,7 @@ function App() {
           <a href="https://www.pinterest.jp/chi3_jp/" target="_blank" rel="noopener noreferrer" className="text-white mx-2">Pinterest</a>
           <a href="https://www.tiktok.com/@chi3jp" target="_blank" rel="noopener noreferrer" className="text-white mx-2">TikTok</a>
           <a href="https://suno.com/@chi3jp" target="_blank" rel="noopener noreferrer" className="text-white mx-2">Suno</a>
-          <a href="https://buymeacoffee.com/chi3jp" target="_blank" rel="noopener noreferrer" className="text-white mx-2">Buy me a coffee</a>
+          <a href="https://buymeacoffee.com/chi3jp" target="_blank" rel="noopener noreferrer" className="text-white mx-2 no-wrap">Buy me a coffee</a>
           <p className="mt-2">&copy; 2025 Chi3. All rights reserved.</p>
         </footer>
       </div>
