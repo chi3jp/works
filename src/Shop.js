@@ -19,8 +19,8 @@ function Shop() {
           <Col md={4} key={item.name} className="mb-4">
             <a href={item.url} target="_blank" rel="noopener noreferrer" className="card-link-wrapper">
               <Card className="h-100">
-                <Card.Body>
-                  <Card.Title>{item.name}</Card.Title>
+                <Card.Body className="card-body">
+                  <Card.Title className="shop-item-title" style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>{item.name}</Card.Title>
                   <Card.Text>{item.description}</Card.Text>
                 </Card.Body>
                 <div className="card-overlay">

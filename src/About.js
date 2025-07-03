@@ -37,7 +37,7 @@ function About() {
             作品に関するお問い合わせやコラボレーションのご依頼は、以下のInstagramアカウントまでお願いいたします。
           </p>
           <p>
-            <a href="https://www.instagram.com/chi3jp_aiart/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+            <a href="https://www.instagram.com/chi3jp_aiart/" target="_blank" rel="noopener noreferrer" className="btn" style={{ backgroundColor: '#6A0DAD', borderColor: '#6A0DAD', color: 'white' }}>
               Visit my Instagram
             </a>
           </p>

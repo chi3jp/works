@@ -61,7 +61,7 @@ main {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(106, 13, 173, 0.85); /* #6A0DAD の少し濃い半透明 */
   overflow: hidden;
   width: 100%;
   height: 0;
@@ -83,4 +83,35 @@ main {
 
 .no-wrap {
   white-space: nowrap;
+}
+
+.card-link-wrapper .shop-item-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%; /* 下線の幅を100%にする */
+  height: 2px; /* 下線の太さ */
+  background-color: #6A0DAD; /* アメジストに近い色 */
+}
+
+.shop-item-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px; /* 下線とテキストの間のスペース */
+}
+
+.home-explore-links .shop-item-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0; /* 初期状態では幅を0にする */
+  height: 2px; /* 下線の太さ */
+  background-color: #6A0DAD; /* アメジストに近い色 */
+  transition: width 0.3s ease-out; /* アニメーションの速度とイージング */
+}
+
+.home-explore-links .shop-item-title:hover::after {
+  width: 100%; /* ホバー時に幅を100%にする */
 }

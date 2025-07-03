@@ -25,7 +25,7 @@ function Contact() {
           <Form.Control as="textarea" rows={5} placeholder="Your message" />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button style={{ backgroundColor: '#6A0DAD', borderColor: '#6A0DAD' }} type="submit">
           Submit
         </Button>
       </Form>

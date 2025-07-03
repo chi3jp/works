@@ -19,7 +19,16 @@ function Home() {
             <br />
             Shop、Media、NFTなど、各ページで作品や情報をご覧ください。
           </p>
-          <Button as={Link} to="/about" variant="primary" className="mt-3">About Me</Button>
+          {/* Explore セクションの追加 */}
+          <div className="mt-5">
+            <h2 className="mb-4">Explore Our Works</h2>
+            <ul className="list-unstyled d-flex justify-content-center flex-wrap gap-4 home-explore-links">
+              <li><Link to="/shop" className="shop-item-title" style={{ fontSize: '1.5rem', textDecoration: 'none', color: 'inherit' }}>Shop</Link></li>
+              <li><Link to="/media" className="shop-item-title" style={{ fontSize: '1.5rem', textDecoration: 'none', color: 'inherit' }}>Media</Link></li>
+              <li><Link to="/nft" className="shop-item-title" style={{ fontSize: '1.5rem', textDecoration: 'none', color: 'inherit' }}>NFT</Link></li>
+            </ul>
+          </div>
+          <Button as={Link} to="/about" style={{ backgroundColor: '#6A0DAD', borderColor: '#6A0DAD' }} className="mt-3">About Me</Button>
         </Col>
       </Row>
     </Container>
