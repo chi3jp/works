@@ -1,14 +1,13 @@
 import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import './About.css'; // Aboutページ専用のCSSを読み込む
-import ProfileImage from '../public/chi3jp_A_realistic_beautiful_particle_photorealism_of_a_healt_3bb05ce5-9b4d-4b0b-80c4-b1f885766ee2_3.png'; // 画像をインポート
 
 function About() {
   return (
     <Container className="my-4 about-page">
       <Row className="justify-content-center mb-4">
         <Col md={8} className="text-center">
-          <Image src={ProfileImage} alt="Profile" roundedCircle fluid className="profile-image mb-3" />
+          <Image src="/chi3jp_A_realistic_beautiful_particle_photorealism_of_a_healt_3bb05ce5-9b4d-4b0b-80c4-b1f885766ee2_3.png" alt="Profile" roundedCircle fluid className="profile-image mb-3" />
           <h2>About</h2>
           <p className="lead">
             AIを軸に、アートから日常のヒントまで、多彩なコンテンツを創造・発信しています。
