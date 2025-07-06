@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
 const nftPlatforms = [
@@ -8,16 +8,19 @@ const nftPlatforms = [
 ];
 
 function Nft() {
+  useEffect(() => {
+    document.title = 'NFT | Chi3 Works';
+  }, []);
   return (
     <Container className="my-4">
-      <h2 className="text-center mb-4">NFT Works</h2>
+      <h2 className="text-center mb-4 display-4">NFT Works</h2>
       <Row>
         {nftPlatforms.map(platform => (
           <Col md={4} key={platform.name} className="mb-4">
             <a href={platform.url} target="_blank" rel="noopener noreferrer" className="card-link-wrapper">
-              <Card className="h-100">
+              <Card className="h-100 border-0">
                 <Card.Body>
-                  <Card.Title>{platform.name}</Card.Title>
+                  <Card.Title className="shop-item-title" style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>{platform.name}</Card.Title>
                   <Card.Text>{platform.description}</Card.Text>
                 </Card.Body>
                 <div className="card-overlay">

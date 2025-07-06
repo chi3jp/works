@@ -1,34 +1,25 @@
-
-import React from 'react';
-import { Container, Form, Button } from 'react-bootstrap';
+import React, { useEffect } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 
 function Contact() {
+  useEffect(() => {
+    document.title = 'Contact | Chi3 Works';
+  }, []);
   return (
     <Container className="my-4">
-      <h2 className="text-center mb-4">Contact Me</h2>
-      <Form style={{ maxWidth: '600px', margin: '0 auto' }}>
-        <Form.Group className="mb-3" controlId="formBasicName">
-          <Form.Label>Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter your name" />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter your email" />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicMessage">
-          <Form.Label>Message</Form.Label>
-          <Form.Control as="textarea" rows={5} placeholder="Your message" />
-        </Form.Group>
-
-        <Button style={{ backgroundColor: '#6A0DAD', borderColor: '#6A0DAD' }} type="submit">
-          Submit
-        </Button>
-      </Form>
+      <Row className="justify-content-center">
+        <Col md={8} className="text-center">
+          <h2 className="text-center mb-4 display-4">Contact</h2>
+          <p>
+            作品に関するお問い合わせやコラボレーションのご依頼は、以下のInstagramアカウントまでお願いいたします。
+          </p>
+          <p>
+            <a href="https://www.instagram.com/chi3jp_aiart/" target="_blank" rel="noopener noreferrer" className="btn" style={{ backgroundColor: '#6A0DAD', borderColor: '#6A0DAD', color: 'white' }}>
+              Visit my Instagram
+            </a>
+          </p>
+        </Col>
+      </Row>
     </Container>
   );
 }
