@@ -18,6 +18,14 @@ function Contact() {
               Visit my Instagram
             </a>
           </p>
+          <p>
+            または、Discordでもご連絡いただけます。
+          </p>
+          <p>
+            <a href="https://discord.gg/zCutMZ46A2" target="_blank" rel="noopener noreferrer" className="btn" style={{ backgroundColor: '#7289DA', borderColor: '#7289DA', color: 'white' }}>
+              Join our Discord
+            </a>
+          </p>
         </Col>
       </Row>
     </Container>
