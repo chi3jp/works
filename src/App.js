@@ -7,6 +7,7 @@ import Media from './Media';
 import Nft from './Nft';
 import About from './About';
 import Contact from './Contact';
+import Apps100 from './Apps100';
 import './App.css';
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
                   <Nav.Link as={Link} to="/shop" onClick={handleClose}>Shop</Nav.Link>
                   <Nav.Link as={Link} to="/media" onClick={handleClose}>Media</Nav.Link>
                   <Nav.Link as={Link} to="/nft" onClick={handleClose}>NFT</Nav.Link>
+                  <Nav.Link as={Link} to="/apps100" onClick={handleClose}>AIアプリ100本ノック</Nav.Link>
                   <Nav.Link as={Link} to="/about" onClick={handleClose}>About</Nav.Link>
                   <Nav.Link as={Link} to="/contact" onClick={handleClose}>Contact</Nav.Link>
                 </Nav>
@@ -54,6 +56,7 @@ function App() {
             <Route path="/nft" element={<Nft />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/apps100" element={<Apps100 />} />
           </Routes>
         </main>
         <footer className="bg-dark text-white text-center p-3 mt-4">
@@ -62,6 +65,7 @@ function App() {
             <Link to="/shop" className="text-white mx-2">Shop</Link>
             <Link to="/media" className="text-white mx-2">Media</Link>
             <Link to="/nft" className="text-white mx-2">NFT</Link>
+            <Link to="/apps100" className="text-white mx-2">AIアプリ100本ノック</Link>
             <Link to="/about" className="text-white mx-2">About</Link>
             <Link to="/contact" className="text-white mx-2">Contact</Link>
           </div>

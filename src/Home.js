@@ -8,7 +8,8 @@ const hashtags = [
   { name: '#メルマガ', path: '/media' },
   { name: '#音声配信', path: '/media' },
   { name: '#コンテンツ', path: '/shop' },
-  { name: '#NFT', path: '/nft' }
+  { name: '#NFT', path: '/nft' },
+  { name: '#AIアプリ100本ノック', path: '/apps100' }
 ];
 
 function Home() {
